@@ -2,6 +2,8 @@ import re
 import json
 from collections import defaultdict
 
+from llm import get_answer
+
 SENDER_RE = r'\[\d{1,2}\/\d{1,2}\/\d{2},\s\d{1,2}:\d{2}:\d{2}.[AP]M\]\s(\w+\s\w+):\s(.+)'
 
 
@@ -27,4 +29,8 @@ def write_message_data():
 
 
 if __name__ == '__main__':
-    write_message_data()
+    query = input('Ask Premal a football question: \n')
+    print("\n")
+    print(get_answer(query))
+
+
