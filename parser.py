@@ -1,7 +1,6 @@
 from collections import defaultdict
 import re
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_core.documents import Document
 from typing import List
 
 SENDER_RE = r'\[\d{1,2}\/\d{1,2}\/\d{2},\s\d{1,2}:\d{2}:\d{2}.[AP]M\]\s(\w+\s\w+):\s(.+)'

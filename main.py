@@ -1,7 +1,10 @@
-from parser import parse_all_messages, split_messages
-from vectorstore import MilvusStore
+from llm import OpenAIChatbot
+import gradio as gr
 
 if __name__ == '__main__':
-    message_chunks = split_messages(parse_all_messages())
-    vector_store = MilvusStore(name="all_messages")
-    vector_store.insert_messages(message_chunks)
+    chatbot = OpenAIChatbot(vector_store="all_messages")
+
+    gr.ChatInterface(
+        fn=chatbot.chat,
+        type="messages"
+    ).launch()

@@ -10,7 +10,6 @@ milvus_client = MilvusClient(uri="./data/milvus_football_rag.db")
 class MilvusStore:
     def __init__(self, name: str):
         self.name = name
-        self.setup_datastore()
 
     def setup_datastore(self):
         if milvus_client.has_collection(self.name):
